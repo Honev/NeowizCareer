@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neowiz Career</title>
+    <style>
+      .image-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .image {
+        width: 100%;
+        height: auto;
+      }
+      .logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <img
+        class="image"
+        src="Tree/NeowizCareer/asset/image_324.png"
+        alt="Main Page Image" />
+      <img class="logo" src="Tree/NeowizCareer/asset/logo.png" alt="Logo" />
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // 이미지 및 로고 요소 가져오기
+        const image = document.querySelector('.image');
+        const logo = document.querySelector('.logo');
+
+        // '진행중인 공고' 부분 클릭 시 다음 이미지로 이동
+        image.addEventListener('click', function (event) {
+          const x = event.offsetX; // 클릭한 위치의 X 좌표
+          const y = event.offsetY; // 클릭한 위치의 Y 좌표
+          // 만약 클릭한 위치가 '진행중인 공고' 영역 안에 있다면 다음 이미지로 이동
+          if (x >= 2046 && x <= 2346 && y >= 0 && y <= image.height) {
+            // 다음 이미지로 이동
+            window.location.href = 'Tree/NeowizCareer/asset/image_325.png';
+          }
+        });
+
+        // 로고 클릭 시 처음 이미지로 이동
+        logo.addEventListener('click', function () {
+          // 처음 이미지로 이동
+          window.location.href = 'Tree/NeowizCareer/asset/image_324.png';
+        });
+      });
+    </script>
+  </body>
+</html>
